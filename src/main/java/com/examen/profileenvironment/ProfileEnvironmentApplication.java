@@ -26,7 +26,7 @@ public class ProfileEnvironmentApplication {
     }
 
     @Autowired
-    @Qualifier("AppServiceQA")
+    @Qualifier("AppServiceDev")
     AppService appService;
 
    /* @Bean
