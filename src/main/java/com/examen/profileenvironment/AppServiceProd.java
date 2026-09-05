@@ -9,9 +9,8 @@ import org.springframework.stereotype.Service;
 import java.util.Arrays;
 
 @Service
-@Profile("qa")
-public class AppServiceQA implements AppService{
-
+@Profile("prod")
+public class AppServiceProd implements AppService{
     @Value("${app.name}")
     private String appName;
     @Value("${app.version}")
@@ -19,11 +18,13 @@ public class AppServiceQA implements AppService{
 
     @Autowired
     Environment environment;
+
     @Override
     public void getAppInfo() {
-        System.out.println("This is the QA environment");
+        System.out.println("This is the Prod environment");
         System.out.println("App Name: " + appName);
         System.out.println("App Version: " + appVersion);
         System.out.println("App environment: " + Arrays.toString(environment.getActiveProfiles()));
+
     }
 }
